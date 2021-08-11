@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+export POSTGRES_USER=dream
+export POSTGRES_PASSWORD=secret
+export POSTGRES_HOST=localhost
+export POSTGRES_PORT=5432
+export POSTGRES_DB=dream
+export DATABASE_URL=postgresql://$POSTGRES_USER:$POSTGRES_PASSWORD@$POSTGRES_HOST:$POSTGRES_PORT/$POSTGRES_DB
+# export PORT=3003

@@ -1,0 +1,14 @@
+(executable
+ (name main)
+ (libraries caqti-driver-sqlite3 dream)
+ (preprocess (pps lwt_ppx)))
+
+(rule
+ (targets View.ml)
+ (deps View.eml.ml)
+ (action (run dream_eml %{deps} --workspace %{workspace_root})))
+; silence unused comment warning in View.eml.ml since args are used
+(env
+ (dev
+  (flags (:standard -w -27))))
+(data_only_dirs _esy esy.lock lib node_modules)
